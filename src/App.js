@@ -69,7 +69,9 @@ const App = () => {
       setCount(count + 1);
     }
     console.log("page count", count, res?.["total-content-items"], data.length);
-    fetch(`https://test.create.diagnal.com/data/page${count}.json`)
+    fetch(`https://test.create.diagnal.com/data/page${count}.json`, {
+      mode: "cors",
+    })
       .then((res) => res.json())
       .then((json) => {
         setRes(json.page);
